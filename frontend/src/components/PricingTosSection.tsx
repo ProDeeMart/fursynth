@@ -54,18 +54,18 @@ export const PricingTosSection: React.FC<PricingTosSectionProps> = ({ setCurrent
   ];
 
   return (
-    <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
       
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto">
-        <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30 text-xs text-purple-300 mb-3">
-          <Sparkles className="w-3.5 h-3.5 text-cyan-300" />
+        <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-orange-100 text-[#ea580c] text-xs font-bold mb-2">
+          <Sparkles className="w-3.5 h-3.5" />
           <span>Transparent Pricing</span>
         </div>
-        <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight font-['Space_Grotesk'] text-white">
-          แพ็กเกจราคาและ <span className="cosmic-text-gradient">ข้อตกลงการจ้าง</span>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-['Space_Grotesk']">
+          แพ็กเกจราคาและ <span className="text-[#f97316]">ข้อตกลงการจ้าง</span>
         </h2>
-        <p className="mt-3 text-slate-400 text-sm sm:text-base">
+        <p className="mt-2 text-slate-600 text-sm sm:text-base">
           ราคาประเมินเบื้องต้นตามขอบเขตงาน ความซับซ้อน และจำนวนฟังก์ชันที่ต้องการติดตั้ง
         </p>
       </div>
@@ -75,15 +75,15 @@ export const PricingTosSection: React.FC<PricingTosSectionProps> = ({ setCurrent
         {tiers.map((tier, idx) => (
           <div
             key={idx}
-            className={`glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 relative ${
+            className={`bg-white rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 relative shadow-sm hover:shadow-md ${
               tier.popular
-                ? 'border-cyan-400/80 shadow-[0_0_35px_rgba(6,182,212,0.25)] ring-1 ring-cyan-400/50'
-                : 'border-purple-900/30 hover:border-purple-500/50'
+                ? 'border-2 border-[#f97316] ring-4 ring-orange-100'
+                : 'border border-slate-200'
             }`}
           >
             {tier.popular && (
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                <span className="px-4 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-purple-600 to-cyan-500 text-white shadow-md">
+                <span className="px-4 py-1 rounded-full text-xs font-bold bg-[#f97316] text-white shadow-sm">
                   {tier.tag}
                 </span>
               </div>
@@ -91,25 +91,25 @@ export const PricingTosSection: React.FC<PricingTosSectionProps> = ({ setCurrent
 
             <div className="space-y-4">
               <div>
-                <span className="text-xs text-purple-300 font-semibold">{tier.tag}</span>
-                <h3 className="text-2xl font-bold text-white mt-1 font-['Space_Grotesk']">
+                <span className="text-xs text-[#ea580c] font-bold">{tier.tag}</span>
+                <h3 className="text-2xl font-bold text-slate-900 mt-1 font-['Space_Grotesk']">
                   {tier.name}
                 </h3>
-                <div className="mt-3 text-3xl font-extrabold text-cyan-300 font-mono">
+                <div className="mt-3 text-3xl font-black text-[#ea580c] font-mono">
                   {tier.price}
                 </div>
-                <p className="text-xs text-slate-400 mt-2 leading-relaxed">
+                <p className="text-xs text-slate-500 mt-2 leading-relaxed">
                   {tier.desc}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-slate-800 space-y-2.5">
-                <span className="text-xs font-semibold text-slate-300 uppercase tracking-wider block">
+              <div className="pt-4 border-t border-slate-100 space-y-2.5">
+                <span className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
                   สิ่งที่รวมในแพ็กเกจ:
                 </span>
                 {tier.features.map((feat, fIdx) => (
-                  <div key={fIdx} className="flex items-start space-x-2 text-xs text-slate-300">
-                    <Check className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <div key={fIdx} className="flex items-start space-x-2 text-xs text-slate-700">
+                    <Check className="w-4 h-4 text-[#f97316] shrink-0 mt-0.5" />
                     <span>{feat}</span>
                   </div>
                 ))}
@@ -121,8 +121,8 @@ export const PricingTosSection: React.FC<PricingTosSectionProps> = ({ setCurrent
                 onClick={() => setCurrentTab('commission')}
                 className={`w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all cursor-pointer ${
                   tier.popular
-                    ? 'bg-gradient-to-r from-purple-600 to-cyan-500 text-white shadow-lg hover:shadow-cyan-500/30'
-                    : 'bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700'
+                    ? 'bg-[#f97316] hover:bg-[#ea580c] text-white shadow-md'
+                    : 'bg-slate-100 hover:bg-slate-200 text-slate-800'
                 }`}
               >
                 เลือกแพ็กเกจนี้
@@ -134,56 +134,46 @@ export const PricingTosSection: React.FC<PricingTosSectionProps> = ({ setCurrent
       </div>
 
       {/* Terms of Service (ToS) Card */}
-      <div className="glass-panel rounded-3xl border border-purple-900/40 p-6 sm:p-10 space-y-6">
-        <div className="flex items-center space-x-3 border-b border-purple-900/40 pb-4">
-          <Shield className="w-6 h-6 text-cyan-400" />
-          <h3 className="text-xl sm:text-2xl font-bold text-white font-['Space_Grotesk']">
+      <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 space-y-6 shadow-sm">
+        <div className="flex items-center space-x-3 border-b border-slate-100 pb-4">
+          <Shield className="w-6 h-6 text-[#f97316]" />
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 font-['Space_Grotesk']">
             ข้อตกลงและเงื่อนไขการให้บริการ (Terms of Service)
           </h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-slate-300 leading-relaxed">
-          
-          <div className="space-y-2 p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80">
-            <h4 className="font-bold text-cyan-300 text-sm flex items-center space-x-1.5">
-              <span>1. การชำระเงินและมัดจำ</span>
-            </h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-slate-600 leading-relaxed">
+          <div className="space-y-2 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+            <h4 className="font-bold text-slate-900 text-sm">1. การชำระเงินและมัดจำ</h4>
             <p>
               • ชำระมัดจำ <strong>50%</strong> ก่อนเริ่มลงมือทำงาน เพื่อยืนยันและล็อคคิวงานในระบบ<br />
               • ชำระส่วนที่เหลือ <strong>50%</strong> หลังจากทดสอบโมเดลใน VRChat และยืนยันความถูกต้อง ก่อนส่งมอบไฟล์ Unitypackage
             </p>
           </div>
 
-          <div className="space-y-2 p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80">
-            <h4 className="font-bold text-cyan-300 text-sm flex items-center space-x-1.5">
-              <span>2. ลิขสิทธิ์โมเดลฐานและแอสเสต</span>
-            </h4>
+          <div className="space-y-2 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+            <h4 className="font-bold text-slate-900 text-sm">2. ลิขสิทธิ์โมเดลฐานและแอสเสต</h4>
             <p>
               • ผู้ว่าจ้างต้องเป็นเจ้าของโมเดลฐานและแอสเสต 3D (ซื้อถูกต้องจาก Booth หรือครีเอเตอร์ต้นฉบับ)<br />
               • ครีเอเตอร์จะไม่นำโมเดลฐานของลูกค้าไปแจกจ่าย หรือขายต่อให้บุคคลที่สามโดยเด็ดขาด
             </p>
           </div>
 
-          <div className="space-y-2 p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80">
-            <h4 className="font-bold text-cyan-300 text-sm flex items-center space-x-1.5">
-              <span>3. การแก้ไขงานและการรับประกัน</span>
-            </h4>
+          <div className="space-y-2 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+            <h4 className="font-bold text-slate-900 text-sm">3. การแก้ไขงานและการรับประกัน</h4>
             <p>
               • สามารถแก้ไขงานได้ฟรีในขั้นตอน Sketch / Modeling และ Texturing<br />
               • รับประกันแก้บั๊กเทคนิค (เช่น กระดูกเคลื่อน, ฟิสิกส์ทะลุ, บั๊ก Shaders) ฟรี <strong>14 วัน</strong> นับจากวันส่งมอบงาน
             </p>
           </div>
 
-          <div className="space-y-2 p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80">
-            <h4 className="font-bold text-cyan-300 text-sm flex items-center space-x-1.5">
-              <span>4. การใช้งานเชิงพาณิชย์ & สตรีมเมอร์</span>
-            </h4>
+          <div className="space-y-2 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+            <h4 className="font-bold text-slate-900 text-sm">4. การใช้งานเชิงพาณิชย์ & สตรีมเมอร์</h4>
             <p>
               • สามารถนำไปใช้สตรีมเกม, ทำคอนเทนต์ลง YouTube / Twitch / TikTok ได้อย่างอิสระ<br />
               • สำหรับการนำไปผลิตสินค้า Merchandise หรือขายต่อ ต้องระบุในบรีฟเพื่อตกลง Commercial Rights เพิ่มเติม
             </p>
           </div>
-
         </div>
 
       </div>

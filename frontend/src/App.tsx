@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { StarfieldBackground } from './components/StarfieldBackground';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { PortfolioSection } from './components/PortfolioSection';
@@ -59,10 +58,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#060714] text-slate-100 flex flex-col relative selection:bg-purple-600/30 selection:text-cyan-300">
-      
-      {/* Dynamic Animated Cosmic Starfield Background */}
-      <StarfieldBackground />
+    <div className="min-h-screen bg-[#f8fafc] text-slate-900 flex flex-col relative selection:bg-orange-500/20 selection:text-orange-600">
 
       {/* Navigation Bar */}
       <Navbar
@@ -88,7 +84,7 @@ export function App() {
             />
             
             {/* Featured Portfolio Showcase on Home */}
-            <div className="border-t border-purple-900/30 pt-4">
+            <div className="border-t border-slate-200/80 pt-4">
               <PortfolioSection
                 portfolio={portfolio}
                 setCurrentTab={setCurrentTab}
@@ -99,7 +95,7 @@ export function App() {
         )}
 
         {currentTab === 'portfolio' && (
-          <div className="pt-20">
+          <div className="pt-8">
             <PortfolioSection
               portfolio={portfolio}
               setCurrentTab={setCurrentTab}
@@ -109,7 +105,7 @@ export function App() {
         )}
 
         {currentTab === 'commission' && (
-          <div className="pt-20">
+          <div className="pt-8">
             <CommissionFormSection
               initialSelectedAvatar={selectedAvatarForCommission}
               setCurrentTab={setCurrentTab}
@@ -119,7 +115,7 @@ export function App() {
         )}
 
         {currentTab === 'queue' && (
-          <div className="pt-20">
+          <div className="pt-8">
             <QueueTrackerSection
               orders={orders}
               searchedCode={searchedOrderCode}
@@ -129,21 +125,21 @@ export function App() {
         )}
 
         {currentTab === 'pricing' && (
-          <div className="pt-20">
+          <div className="pt-8">
             <PricingTosSection setCurrentTab={setCurrentTab} />
           </div>
         )}
 
         {currentTab === 'admin' && (
-          <div className="pt-20">
+          <div className="pt-8">
             {currentUser?.role === 'admin' ? (
               <AdminDashboard orders={orders} onRefreshOrders={loadData} />
             ) : (
               <div className="py-24 text-center max-w-md mx-auto space-y-4">
-                <p className="text-slate-400">คุณต้องเข้าสู่ระบบในฐานะแอดมินเพื่อเข้าถึงหน้านี้</p>
+                <p className="text-slate-500 font-medium">คุณต้องเข้าสู่ระบบในฐานะแอดมินเพื่อเข้าถึงหน้านี้</p>
                 <button
                   onClick={() => setIsLoginModalOpen(true)}
-                  className="px-6 py-2.5 rounded-xl bg-purple-600 text-white font-medium text-sm"
+                  className="px-6 py-2.5 rounded-xl bg-[#f97316] hover:bg-[#ea580c] text-white font-bold text-sm shadow-md transition-all cursor-pointer"
                 >
                   เข้าสู่ระบบแอดมิน
                 </button>
