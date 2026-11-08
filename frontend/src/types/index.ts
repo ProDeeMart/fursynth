@@ -81,3 +81,4 @@ export interface CommissionSubmission {
   notes?: string;
   agreedToTos: boolean;
 }
+

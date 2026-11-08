@@ -25,3 +25,4 @@ echo Starting quick tunnel to localhost:8000 ...
 cloudflared tunnel --url http://localhost:8000
 
 pause
+

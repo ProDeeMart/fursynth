@@ -322,3 +322,4 @@ def send_discord_notification(webhook_url: str, code: str, order: CommissionCrea
         urllib.request.urlopen(req, timeout=3)
     except Exception:
         pass
+

@@ -43,3 +43,4 @@ class PortfolioCreate(BaseModel):
     gogoLoco: Optional[bool] = True
     tags: List[str] = []
     featured: Optional[bool] = False
+

@@ -124,3 +124,4 @@ Fursynth/
 │
 └── .gitignore
 ```
+
