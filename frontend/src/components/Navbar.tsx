@@ -46,37 +46,37 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header className="w-full bg-white border-b border-slate-200 sticky top-0 z-50">
       
       {/* Top Thin Announcement Strip (From Reference Image) */}
-      <div className="bg-[#fef3c7] text-[#92400e] px-4 sm:px-8 py-2.5 text-sm sm:text-base font-medium border-b border-amber-200/60">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-2.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#f97316] animate-pulse" />
-            <span className="font-semibold text-slate-900">Fursynth Studio</span>
+      <div className="bg-[#fef3c7] text-[#92400e] px-4 sm:px-8 py-2 text-xs sm:text-sm font-medium border-b border-amber-200/60 overflow-hidden">
+        <div className="max-w-7xl mx-auto flex items-center justify-between whitespace-nowrap">
+          <div className="flex items-center space-x-2 shrink-0">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#f97316] animate-pulse shrink-0" />
+            <span className="font-bold text-slate-900">Fursynth Studio</span>
             <span className="text-amber-800 hidden sm:inline">• รับทำ VRChat Avatar PC & Meta Quest</span>
           </div>
-          <div className="flex items-center space-x-4 text-xs sm:text-sm">
-            <span className="flex items-center space-x-1.5 font-medium">
-              <MessageSquare className="w-4 h-4 text-[#f97316]" />
+          <div className="flex items-center space-x-3.5 text-xs sm:text-sm shrink-0">
+            <span className="flex items-center space-x-1.5 font-medium shrink-0">
+              <MessageSquare className="w-4 h-4 text-[#f97316] shrink-0" />
               <span className="hidden md:inline">Discord:</span>
-              <span className="font-semibold text-[#92400e]">Fursynth Community</span>
+              <span className="font-bold text-[#92400e]">Fursynth Community</span>
             </span>
             <span>•</span>
-            <span className="text-xs sm:text-sm font-semibold text-[#b45309]">
+            <span className="text-xs sm:text-sm font-bold text-[#b45309] shrink-0">
               {backendOnline ? '🟢 Backend Online' : '🟠 Cloud Ready'}
             </span>
           </div>
         </div>
       </div>
 
-      {/* Main Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24 sm:h-28">
+      {/* Main Navigation Bar (Guaranteed Single Line - No Wrapping) */}
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20 sm:h-24 gap-2 lg:gap-4">
           
-          {/* Logo & Brand */}
+          {/* Logo & Brand (Always 1 Line) */}
           <div 
-            className="flex items-center space-x-3.5 cursor-pointer group"
+            className="flex items-center space-x-3 cursor-pointer group shrink-0"
             onClick={() => setCurrentTab('home')}
           >
-            <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border-[2.5px] border-[#f97316] shadow-md shrink-0">
+            <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-[#f97316] shadow-sm shrink-0">
               <img 
                 src="/logo.jpg" 
                 alt="Fursynth Logo" 
@@ -84,68 +84,68 @@ export const Navbar: React.FC<NavbarProps> = ({
               />
             </div>
             
-            <div className="flex flex-col">
-              <div className="flex items-center space-x-2">
-                <span className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 font-['Space_Grotesk'] leading-none">
+            <div className="flex flex-col shrink-0">
+              <div className="flex items-center space-x-1.5 whitespace-nowrap">
+                <span className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 font-['Space_Grotesk'] leading-none">
                   Fursynth
                 </span>
-                <span className="text-xs uppercase font-extrabold px-2 py-0.5 rounded-md bg-orange-100 text-[#ea580c]">
+                <span className="text-[11px] uppercase font-black px-2 py-0.5 rounded-md bg-orange-100 text-[#ea580c] shrink-0">
                   VRChat
                 </span>
               </div>
-              <span className="text-xs sm:text-sm tracking-wide text-slate-500 font-semibold mt-1">
+              <span className="text-[11px] sm:text-xs tracking-wide text-slate-500 font-semibold mt-0.5 whitespace-nowrap">
                 Bespoke Avatar Studio
               </span>
             </div>
           </div>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
+          {/* Desktop Nav Links (Guaranteed 1 Line - whitespace-nowrap) */}
+          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2 shrink-0">
             {navLinks.map((link) => {
               const isActive = currentTab === link.id;
               return (
                 <button
                   key={link.id}
                   onClick={() => setCurrentTab(link.id)}
-                  className={`px-4 lg:px-5 py-2.5 rounded-xl text-base sm:text-lg font-bold transition-all duration-200 cursor-pointer ${
+                  className={`px-3 xl:px-4 py-2 rounded-xl text-sm xl:text-base font-bold whitespace-nowrap no-wrap-text transition-all duration-200 cursor-pointer shrink-0 ${
                     isActive
                       ? 'text-[#ea580c] bg-orange-50 shadow-xs'
                       : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100'
                   }`}
                 >
-                  {link.label}
+                  <span className="no-wrap-text whitespace-nowrap">{link.label}</span>
                 </button>
               );
             })}
           </nav>
 
-          {/* Right Action Buttons */}
-          <div className="hidden md:flex items-center space-x-3.5">
+          {/* Right Action Buttons (Guaranteed 1 Line - whitespace-nowrap) */}
+          <div className="hidden sm:flex items-center space-x-2 lg:space-x-3 shrink-0">
             
             {/* Quick Search for Queue */}
             <button
               onClick={() => setCurrentTab('queue')}
               title="ค้นหาคิวงาน"
-              className="p-2.5 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-colors cursor-pointer"
+              className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-colors cursor-pointer shrink-0"
             >
               <Search className="w-5 h-5" />
             </button>
 
             {/* Auth Pill */}
             {currentUser ? (
-              <div className="flex items-center space-x-2.5 bg-slate-100 px-3.5 py-2 rounded-xl border border-slate-200">
-                <div className="flex items-center space-x-1.5 text-sm font-bold text-slate-800">
+              <div className="flex items-center space-x-2 bg-slate-100 px-3 py-1.5 rounded-xl border border-slate-200 shrink-0 whitespace-nowrap no-wrap-text">
+                <div className="flex items-center space-x-1.5 text-sm font-bold text-slate-800 shrink-0 whitespace-nowrap no-wrap-text">
                   {currentUser.role === 'admin' ? (
-                    <ShieldCheck className="w-4 h-4 text-[#f97316]" />
+                    <ShieldCheck className="w-4 h-4 text-[#f97316] shrink-0" />
                   ) : (
-                    <UserIcon className="w-4 h-4 text-slate-600" />
+                    <UserIcon className="w-4 h-4 text-slate-600 shrink-0" />
                   )}
-                  <span>{currentUser.username}</span>
+                  <span className="whitespace-nowrap no-wrap-text">{currentUser.username}</span>
                 </div>
                 {currentUser.role === 'admin' && (
                   <button
                     onClick={() => setCurrentTab('admin')}
-                    className="text-xs px-2.5 py-0.5 bg-[#f97316] text-white rounded font-bold"
+                    className="text-xs px-2 py-0.5 bg-[#f97316] text-white rounded font-bold whitespace-nowrap shrink-0"
                   >
                     Admin
                   </button>
@@ -153,7 +153,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <button
                   onClick={handleLogout}
                   title="ออกจากระบบ"
-                  className="p-1 text-slate-400 hover:text-rose-600 transition-colors"
+                  className="p-1 text-slate-400 hover:text-rose-600 transition-colors shrink-0"
                 >
                   <LogOut className="w-4 h-4" />
                 </button>
@@ -161,28 +161,34 @@ export const Navbar: React.FC<NavbarProps> = ({
             ) : (
               <button
                 onClick={openLoginModal}
-                className="text-sm sm:text-base font-bold text-slate-700 hover:text-[#ea580c] px-3.5 py-2.5 rounded-xl hover:bg-slate-100 transition-colors cursor-pointer"
+                className="text-sm xl:text-base font-bold text-slate-700 hover:text-[#ea580c] px-3 py-2 rounded-xl hover:bg-slate-100 transition-colors cursor-pointer whitespace-nowrap no-wrap-text shrink-0"
               >
                 เข้าสู่ระบบ
               </button>
             )}
 
-            {/* Orange CTA Button (From Reference Image) */}
+            {/* Orange CTA Button (Guaranteed 1 Line - whitespace-nowrap) */}
             <button
               onClick={() => setCurrentTab('commission')}
-              className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl text-base sm:text-lg font-black text-white bg-[#f97316] hover:bg-[#ea580c] orange-glow transition-all flex items-center space-x-2 cursor-pointer shadow-md"
+              className="px-5 xl:px-6 py-2.5 xl:py-3 rounded-xl text-sm xl:text-base font-black text-white bg-[#f97316] hover:bg-[#ea580c] orange-glow transition-all flex items-center space-x-2 cursor-pointer shadow-md whitespace-nowrap no-wrap-text shrink-0"
             >
-              <Rocket className="w-5 h-5" />
-              <span>สั่งทำ Avatar</span>
+              <Rocket className="w-4 h-4 xl:w-5 xl:h-5 shrink-0" />
+              <span className="whitespace-nowrap no-wrap-text">สั่งทำ Avatar</span>
             </button>
 
           </div>
 
-          {/* Mobile menu toggle */}
-          <div className="flex md:hidden items-center space-x-2">
+          {/* Mobile menu toggle (Shows below lg screen so menu never wraps) */}
+          <div className="flex lg:hidden items-center space-x-2">
+            <button
+              onClick={() => setCurrentTab('commission')}
+              className="sm:hidden px-3.5 py-1.5 rounded-lg text-xs font-bold text-white bg-[#f97316] whitespace-nowrap"
+            >
+              สั่งทำ
+            </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl text-slate-700 hover:bg-slate-100"
+              className="p-2 rounded-xl text-slate-700 hover:bg-slate-100"
             >
               {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </button>
