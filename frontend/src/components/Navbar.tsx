@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, Orbit, User as UserIcon, LogOut, ShieldCheck, Menu, X, Rocket } from 'lucide-react';
+import { Sparkles, User as UserIcon, LogOut, ShieldCheck, Menu, X, Rocket } from 'lucide-react';
 import type { User } from '../types';
 import { api, clearAuth } from '../services/api';
 
@@ -53,11 +53,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="flex items-center space-x-3 cursor-pointer group"
             onClick={() => setCurrentTab('home')}
           >
-            <div className="relative w-11 h-11 rounded-xl bg-gradient-to-tr from-purple-600 via-indigo-600 to-cyan-400 p-[1.5px] shadow-[0_0_15px_rgba(139,92,246,0.5)] group-hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transition-all">
-              <div className="w-full h-full bg-[#08091a] rounded-[10px] flex items-center justify-center">
-                <Orbit className="w-6 h-6 text-cyan-300 group-hover:rotate-45 transition-transform duration-500" />
-              </div>
-              <Sparkles className="absolute -top-1 -right-1 w-4 h-4 text-amber-300 animate-pulse" />
+            <div className="relative w-12 h-12 rounded-xl bg-gradient-to-tr from-purple-600 via-indigo-600 to-cyan-400 p-[1.5px] shadow-[0_0_15px_rgba(139,92,246,0.5)] group-hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transition-all">
+              <img
+                src="/logo.jpg"
+                alt="Fursynth Logo"
+                className="w-full h-full object-cover rounded-[10px] group-hover:scale-105 transition-transform duration-300"
+              />
+              <Sparkles className="absolute -top-1 -right-1 w-4 h-4 text-amber-300 animate-pulse pointer-events-none" />
             </div>
             
             <div className="flex flex-col">

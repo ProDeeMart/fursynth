@@ -1,5 +1,5 @@
 import React from 'react';
-import { Orbit, Sparkles, MessageSquare, Globe, Heart, Shield, HelpCircle } from 'lucide-react';
+import { Sparkles, MessageSquare, Globe, Heart, Shield, HelpCircle } from 'lucide-react';
 
 interface FooterProps {
   setCurrentTab: (tab: string) => void;
@@ -17,10 +17,12 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab }) => {
           {/* Brand Col */}
           <div className="space-y-4 md:col-span-1">
             <div className="flex items-center space-x-3">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-tr from-purple-600 to-cyan-400 p-[1.5px]">
-                <div className="w-full h-full bg-[#08091a] rounded-[7px] flex items-center justify-center">
-                  <Orbit className="w-5 h-5 text-cyan-300" />
-                </div>
+              <div className="w-9 h-9 rounded-lg bg-gradient-to-tr from-purple-600 to-cyan-400 p-[1.5px] shadow-[0_0_10px_rgba(6,182,212,0.3)]">
+                <img
+                  src="/logo.jpg"
+                  alt="Fursynth Logo"
+                  className="w-full h-full object-cover rounded-[7px]"
+                />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-white via-cyan-200 to-purple-300 bg-clip-text text-transparent font-['Space_Grotesk']">
                 FURSYNTH

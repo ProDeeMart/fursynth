@@ -56,10 +56,12 @@ export const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, onLogin
 
         {/* Title */}
         <div className="text-center space-y-1">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-cyan-400 p-[1.5px] mx-auto mb-3 shadow-[0_0_15px_rgba(6,182,212,0.4)]">
-            <div className="w-full h-full bg-[#08091a] rounded-[14px] flex items-center justify-center">
-              <Lock className="w-6 h-6 text-cyan-300" />
-            </div>
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-purple-600 to-cyan-400 p-[1.5px] mx-auto mb-3 shadow-[0_0_20px_rgba(6,182,212,0.4)]">
+            <img
+              src="/logo.jpg"
+              alt="Fursynth Logo"
+              className="w-full h-full object-cover rounded-[14px]"
+            />
           </div>
           <h3 className="text-2xl font-bold text-white font-['Space_Grotesk']">
             เข้าสู่ระบบ Fursynth

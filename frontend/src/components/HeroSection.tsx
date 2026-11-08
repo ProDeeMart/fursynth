@@ -15,7 +15,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ setCurrentTab }) => {
         
         {/* Top Announcement Pill */}
         <div className="flex justify-center mb-6">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-purple-500/30 text-xs text-slate-300 backdrop-blur-md shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+          <div className="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full bg-slate-900/80 border border-purple-500/30 text-xs text-slate-300 backdrop-blur-md shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+            <img src="/logo.jpg" alt="Fursynth Avatar" className="w-5 h-5 rounded-full object-cover ring-1 ring-cyan-400" />
             <span className="flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
