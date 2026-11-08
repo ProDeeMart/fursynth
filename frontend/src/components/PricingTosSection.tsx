@@ -58,14 +58,14 @@ export const PricingTosSection: React.FC<PricingTosSectionProps> = ({ setCurrent
       
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto">
-        <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-orange-100 text-[#ea580c] text-xs font-bold mb-2">
-          <Sparkles className="w-3.5 h-3.5" />
+        <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-orange-100 text-[#ea580c] text-sm font-extrabold mb-3">
+          <Sparkles className="w-4 h-4" />
           <span>Transparent Pricing</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-['Space_Grotesk']">
+        <h2 className="text-4xl sm:text-5xl font-black text-slate-900 font-['Space_Grotesk'] tracking-tight">
           แพ็กเกจราคาและ <span className="text-[#f97316]">ข้อตกลงการจ้าง</span>
         </h2>
-        <p className="mt-2 text-slate-600 text-sm sm:text-base">
+        <p className="mt-3 text-slate-600 text-base sm:text-lg font-medium">
           ราคาประเมินเบื้องต้นตามขอบเขตงาน ความซับซ้อน และจำนวนฟังก์ชันที่ต้องการติดตั้ง
         </p>
       </div>
@@ -75,40 +75,40 @@ export const PricingTosSection: React.FC<PricingTosSectionProps> = ({ setCurrent
         {tiers.map((tier, idx) => (
           <div
             key={idx}
-            className={`bg-white rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 relative shadow-sm hover:shadow-md ${
+            className={`bg-white rounded-3xl p-8 sm:p-9 flex flex-col justify-between transition-all duration-300 relative shadow-sm hover:shadow-xl ${
               tier.popular
-                ? 'border-2 border-[#f97316] ring-4 ring-orange-100'
+                ? 'border-2 border-[#f97316] ring-4 ring-orange-100/70'
                 : 'border border-slate-200'
             }`}
           >
             {tier.popular && (
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                <span className="px-4 py-1 rounded-full text-xs font-bold bg-[#f97316] text-white shadow-sm">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                <span className="px-5 py-1.5 rounded-full text-xs sm:text-sm font-black bg-[#f97316] text-white shadow-md">
                   {tier.tag}
                 </span>
               </div>
             )}
 
-            <div className="space-y-4">
+            <div className="space-y-5">
               <div>
-                <span className="text-xs text-[#ea580c] font-bold">{tier.tag}</span>
-                <h3 className="text-2xl font-bold text-slate-900 mt-1 font-['Space_Grotesk']">
+                <span className="text-xs uppercase font-extrabold text-[#ea580c] tracking-wider">{tier.tag}</span>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1 font-['Space_Grotesk']">
                   {tier.name}
                 </h3>
-                <div className="mt-3 text-3xl font-black text-[#ea580c] font-mono">
+                <div className="mt-3 text-3xl sm:text-4xl font-black text-[#ea580c] font-mono">
                   {tier.price}
                 </div>
-                <p className="text-xs text-slate-500 mt-2 leading-relaxed">
+                <p className="text-sm text-slate-500 mt-2.5 leading-relaxed font-normal">
                   {tier.desc}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-slate-100 space-y-2.5">
-                <span className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
+              <div className="pt-4 border-t border-slate-100 space-y-3">
+                <span className="text-xs font-black text-slate-800 uppercase tracking-wider block">
                   สิ่งที่รวมในแพ็กเกจ:
                 </span>
                 {tier.features.map((feat, fIdx) => (
-                  <div key={fIdx} className="flex items-start space-x-2 text-xs text-slate-700">
+                  <div key={fIdx} className="flex items-start space-x-2.5 text-sm text-slate-700 font-medium">
                     <Check className="w-4 h-4 text-[#f97316] shrink-0 mt-0.5" />
                     <span>{feat}</span>
                   </div>
@@ -119,9 +119,9 @@ export const PricingTosSection: React.FC<PricingTosSectionProps> = ({ setCurrent
             <div className="pt-8">
               <button
                 onClick={() => setCurrentTab('commission')}
-                className={`w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all cursor-pointer ${
+                className={`w-full py-4 rounded-2xl font-black text-sm uppercase tracking-wider transition-all cursor-pointer shadow-sm ${
                   tier.popular
-                    ? 'bg-[#f97316] hover:bg-[#ea580c] text-white shadow-md'
+                    ? 'bg-[#f97316] hover:bg-[#ea580c] text-white orange-glow'
                     : 'bg-slate-100 hover:bg-slate-200 text-slate-800'
                 }`}
               >

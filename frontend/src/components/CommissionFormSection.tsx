@@ -121,15 +121,15 @@ export const CommissionFormSection: React.FC<CommissionFormSectionProps> = ({
     <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       
       {/* Header */}
-      <div className="text-center mb-10">
-        <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-orange-100 text-[#ea580c] text-xs font-bold mb-2">
-          <Sparkles className="w-3.5 h-3.5" />
+      <div className="text-center mb-12">
+        <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-orange-100 text-[#ea580c] text-sm font-extrabold mb-3">
+          <Sparkles className="w-4 h-4" />
           <span>VRChat Commission Request</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-['Space_Grotesk']">
+        <h2 className="text-4xl sm:text-5xl font-black text-slate-900 font-['Space_Grotesk'] tracking-tight">
           ใบสั่งทำ <span className="text-[#f97316]">Avatar</span>
         </h2>
-        <p className="mt-2 text-slate-600 text-sm sm:text-base">
+        <p className="mt-3 text-slate-600 text-base sm:text-lg max-w-xl mx-auto font-medium">
           กรอกรายละเอียดความต้องการเพื่อขอรับใบเสนอราคาและจองคิวงาน ครีเอเตอร์จะติดต่อกลับผ่าน Discord ภายใน 24 ชม.
         </p>
       </div>
@@ -386,16 +386,16 @@ export const CommissionFormSection: React.FC<CommissionFormSectionProps> = ({
           </div>
 
           {/* Section 4: Terms of Service Agreement */}
-          <div className="pt-2 border-t border-slate-100">
+          <div className="pt-4 border-t border-slate-100">
             <label className="flex items-start space-x-3 cursor-pointer">
               <input
                 type="checkbox"
                 checked={formData.agreedToTos}
                 onChange={(e) => setFormData({ ...formData, agreedToTos: e.target.checked })}
-                className="mt-1 w-4 h-4 rounded border-slate-300 text-[#f97316] focus:ring-0 cursor-pointer"
+                className="mt-1 w-5 h-5 rounded border-slate-300 text-[#f97316] accent-[#f97316] cursor-pointer"
               />
-              <span className="text-xs text-slate-600 leading-relaxed">
-                ฉันได้อ่านและยอมรับ <button type="button" onClick={() => setCurrentTab('pricing')} className="text-[#ea580c] font-bold underline hover:text-[#c2410c]">ข้อตกลงและเงื่อนไขการจ้าง (ToS)</button> รวมถึงการมัดจำ 50% ก่อนเริ่มงาน และการทดสอบโมเดลใน VRChat ก่อนส่งมอบงาน
+              <span className="text-sm sm:text-base text-slate-700 leading-relaxed font-medium">
+                ฉันได้อ่านและยอมรับ <button type="button" onClick={() => setCurrentTab('pricing')} className="text-[#ea580c] font-black underline hover:text-[#c2410c]">ข้อตกลงและเงื่อนไขการจ้าง (ToS)</button> รวมถึงการมัดจำ 50% ก่อนเริ่มงาน และการทดสอบโมเดลใน VRChat ก่อนส่งมอบงาน
               </span>
             </label>
           </div>
@@ -405,7 +405,7 @@ export const CommissionFormSection: React.FC<CommissionFormSectionProps> = ({
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 rounded-xl font-bold text-base text-white bg-[#f97316] hover:bg-[#ea580c] orange-glow disabled:opacity-50 transition-all flex items-center justify-center space-x-2 cursor-pointer"
+              className="w-full py-4.5 rounded-2xl font-black text-lg sm:text-xl text-white bg-[#f97316] hover:bg-[#ea580c] orange-glow shadow-lg disabled:opacity-50 transition-all flex items-center justify-center space-x-2.5 cursor-pointer"
             >
               {isSubmitting ? (
                 <span>กำลังประมวลผลคำสั่งซื้อ...</span>

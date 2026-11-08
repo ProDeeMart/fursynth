@@ -42,28 +42,28 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-slate-200 gap-6">
         <div>
-          <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-orange-100 text-[#ea580c] text-xs font-bold mb-2">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-orange-100 text-[#ea580c] text-sm font-extrabold mb-2.5">
+            <Sparkles className="w-4 h-4" />
             <span>คลังผลงานสร้างสรรค์</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-['Space_Grotesk']">
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 font-['Space_Grotesk'] tracking-tight">
             VRChat Avatar Showcase
           </h2>
-          <p className="text-slate-600 text-sm mt-1 max-w-lg">
+          <p className="text-slate-600 text-base sm:text-lg mt-2 max-w-xl font-medium">
             รวมตัวอย่างผลงานที่ออกแบบและเซ็ตอัประบบเสร็จสมบูรณ์ สามารถคลิกเพื่อดูสเปกและรายละเอียดเชิงลึก
           </p>
         </div>
 
         {/* Filter Chips (Styled from Reference Image) */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2.5">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+              className={`px-5 py-2.5 rounded-xl text-sm sm:text-base font-bold transition-all cursor-pointer ${
                 selectedCategory === cat
-                  ? 'bg-[#f97316] text-white shadow-sm'
-                  : 'bg-white text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-slate-200'
+                  ? 'bg-[#f97316] text-white shadow-md'
+                  : 'bg-white text-slate-700 hover:text-slate-900 hover:bg-slate-100 border border-slate-200'
               }`}
             >
               {cat}
@@ -73,15 +73,15 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
       </div>
 
       {/* Grid of Avatar Cards (Styled from Reference Image Bento Grid) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredItems.map((item) => (
           <div
             key={item.id}
             onClick={() => setActiveModalItem(item)}
-            className="group bg-white rounded-2xl overflow-hidden cursor-pointer border border-slate-200 hover:border-[#f97316] shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+            className="group bg-white rounded-3xl overflow-hidden cursor-pointer border border-slate-200 hover:border-[#f97316] shadow-sm hover:shadow-lg transition-all flex flex-col justify-between"
           >
             {/* Image Thumbnail */}
-            <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+            <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
               <img
                 src={item.imageUrl}
                 alt={item.title}
@@ -90,38 +90,38 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
               />
 
               {/* Category Pill Tag */}
-              <div className="absolute top-3 left-3">
-                <span className="px-2.5 py-1 rounded-md text-[10px] font-bold bg-white/95 text-[#ea580c] shadow-sm">
+              <div className="absolute top-3.5 left-3.5">
+                <span className="px-3 py-1 rounded-lg text-xs font-black bg-white/95 text-[#ea580c] shadow-sm">
                   {item.category}
                 </span>
               </div>
 
               {/* Hover View Button */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30 backdrop-blur-[2px]">
-                <span className="px-4 py-2 rounded-lg bg-white text-slate-900 text-xs font-bold flex items-center space-x-1.5 shadow-md">
-                  <Eye className="w-3.5 h-3.5 text-[#f97316]" />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/35 backdrop-blur-[2px]">
+                <span className="px-5 py-2.5 rounded-xl bg-white text-slate-900 text-sm font-bold flex items-center space-x-2 shadow-lg">
+                  <Eye className="w-4 h-4 text-[#f97316]" />
                   <span>ดูสเปกโมเดล</span>
                 </span>
               </div>
             </div>
 
             {/* Card Content */}
-            <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
               <div>
-                <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#ea580c] transition-colors font-['Space_Grotesk']">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-[#ea580c] transition-colors font-['Space_Grotesk']">
                   {item.title}
                 </h3>
-                <p className="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">
+                <p className="text-sm text-slate-500 mt-1.5 line-clamp-2 leading-relaxed">
                   {item.subtitle}
                 </p>
               </div>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-2">
                 {item.tags.slice(0, 3).map((tag, idx) => (
                   <span
                     key={idx}
-                    className="text-[10px] px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-medium"
+                    className="text-xs px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 font-semibold"
                   >
                     #{tag}
                   </span>
@@ -129,20 +129,20 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
               </div>
 
               {/* Bottom Quick Specs Bar */}
-              <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                <span className="flex items-center space-x-1">
-                  <Layers className="w-3.5 h-3.5 text-[#f97316]" />
+              <div className="pt-3.5 border-t border-slate-100 flex items-center justify-between text-sm text-slate-600 font-medium">
+                <span className="flex items-center space-x-1.5">
+                  <Layers className="w-4 h-4 text-[#f97316]" />
                   <span>{item.polyCount.split(' ')[0]} Tris</span>
                 </span>
-                <span className="flex items-center space-x-1">
-                  <Sliders className="w-3.5 h-3.5 text-slate-600" />
+                <span className="flex items-center space-x-1.5">
+                  <Sliders className="w-4 h-4 text-slate-600" />
                   <span>{item.togglesCount} Toggles</span>
                 </span>
                 <span>
                   {item.questCompatible ? (
                     <span className="text-emerald-600 font-bold">✓ Quest OK</span>
                   ) : (
-                    <span className="text-slate-400">PC Only</span>
+                    <span className="text-slate-400 font-medium">PC Only</span>
                   )}
                 </span>
               </div>
@@ -151,10 +151,10 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
               <div className="pt-1">
                 <button
                   type="button"
-                  className="w-full py-2 rounded-lg bg-orange-50 hover:bg-[#f97316] text-[#ea580c] hover:text-white text-xs font-bold transition-colors flex items-center justify-center space-x-1"
+                  className="w-full py-3 rounded-xl bg-orange-50 hover:bg-[#f97316] text-[#ea580c] hover:text-white text-sm font-bold transition-colors flex items-center justify-center space-x-2 cursor-pointer"
                 >
                   <span>รายละเอียดและสั่งทำ</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
 
@@ -165,43 +165,43 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
 
       {/* Bottom Highlight Feature Bar (Directly From Reference Image Bottom Section) */}
       <div className="mt-16 pt-10 border-t border-slate-200">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-slate-100/80 rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-slate-100/90 rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm">
           
           {/* Left Side: 2 Feature Highlights with Orange Circle Icons (7 cols) */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8">
             
             {/* Feature 1 */}
             <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <div className="w-11 h-11 rounded-full bg-[#f97316] text-white flex items-center justify-center font-bold shadow-md shadow-orange-500/20 shrink-0">
-                  <Sliders className="w-5 h-5 text-white" />
+              <div className="flex items-center space-x-3.5">
+                <div className="w-12 h-12 rounded-full bg-[#f97316] text-white flex items-center justify-center font-bold shadow-md shadow-orange-500/25 shrink-0">
+                  <Sliders className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-base font-extrabold text-slate-900 font-['Space_Grotesk'] leading-tight">
+                  <h4 className="text-lg sm:text-xl font-black text-slate-900 font-['Space_Grotesk'] leading-tight">
                     PhysBones & GogoLoco
                   </h4>
-                  <span className="text-xs text-[#ea580c] font-semibold">Dynamic Physics Setup</span>
+                  <span className="text-sm text-[#ea580c] font-bold">Dynamic Physics Setup</span>
                 </div>
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
                 ติดตั้งฟิสิกส์เส้นผม หาง หู และเสื้อผ้าอย่างเป็นธรรมชาติ พร้อมระบบ GogoLoco ท่าทาง นอน หมอบ บิน ท่าทางนั่งครบครัน
               </p>
             </div>
 
             {/* Feature 2 */}
             <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <div className="w-11 h-11 rounded-full bg-[#f97316] text-white flex items-center justify-center font-bold shadow-md shadow-orange-500/20 shrink-0">
-                  <Layers className="w-5 h-5 text-white" />
+              <div className="flex items-center space-x-3.5">
+                <div className="w-12 h-12 rounded-full bg-[#f97316] text-white flex items-center justify-center font-bold shadow-md shadow-orange-500/25 shrink-0">
+                  <Layers className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-base font-extrabold text-slate-900 font-['Space_Grotesk'] leading-tight">
+                  <h4 className="text-lg sm:text-xl font-black text-slate-900 font-['Space_Grotesk'] leading-tight">
                     Meta Quest Optimized
                   </h4>
-                  <span className="text-xs text-[#ea580c] font-semibold">Standalone Good Rank</span>
+                  <span className="text-sm text-[#ea580c] font-bold">Standalone Good Rank</span>
                 </div>
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
                 ปรับแต่งโมเดลแบบ Good Rank สำหรับแว่น Meta Quest 2 / 3 ให้เพื่อนๆ ชาว Quest มองเห็นตัวคุณได้อย่างสวยงามและลื่นไหล
               </p>
             </div>
@@ -210,33 +210,33 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
 
           {/* Right Side: Dark Banner Card with Avatar Image & Highlight (5 cols) */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-2xl overflow-hidden min-h-[190px] bg-slate-900 text-white p-6 flex flex-col justify-between shadow-lg border border-slate-800">
+            <div className="relative rounded-3xl overflow-hidden min-h-[220px] bg-slate-900 text-white p-7 sm:p-8 flex flex-col justify-between shadow-xl border border-slate-800">
               <img
-                src="/logo.jpg"
+                src="/portfolio/avatar-2.jpg"
                 alt="Featured Preview"
-                className="absolute inset-0 w-full h-full object-cover opacity-25"
+                className="absolute inset-0 w-full h-full object-cover opacity-35"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/95 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent" />
               
-              <div className="relative z-10 space-y-2">
-                <span className="text-[10px] uppercase font-bold tracking-widest text-[#fb923c]">
+              <div className="relative z-10 space-y-2.5">
+                <span className="text-xs uppercase font-extrabold tracking-widest text-[#fb923c]">
                   VERIFIED STUDIO QUALITY
                 </span>
-                <h4 className="text-lg sm:text-xl font-bold font-['Space_Grotesk'] leading-snug">
+                <h4 className="text-xl sm:text-2xl font-black font-['Space_Grotesk'] leading-snug">
                   ทุกงานส่งมอบพร้อมไฟล์ Unitypackage & FBX
                 </h4>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-sm text-slate-300 leading-relaxed font-normal">
                   ทดสอบใน VRChat จริงทุกชิ้นงานก่อนส่งมอบ พร้อมคู่มือและบริการช่วยอัปโหลดเข้าบัญชีฟรี
                 </p>
               </div>
 
-              <div className="relative z-10 pt-3">
+              <div className="relative z-10 pt-4">
                 <button
                   onClick={() => setCurrentTab('commission')}
-                  className="text-xs font-bold text-white bg-[#f97316] hover:bg-[#ea580c] px-4 py-2 rounded-lg inline-flex items-center space-x-1.5 transition-colors cursor-pointer shadow-sm"
+                  className="text-sm sm:text-base font-bold text-white bg-[#f97316] hover:bg-[#ea580c] px-6 py-3 rounded-xl inline-flex items-center space-x-2 transition-all cursor-pointer shadow-md orange-glow"
                 >
                   <span>ส่งใบสั่งทำอวตาร</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </div>

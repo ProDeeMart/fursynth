@@ -77,33 +77,33 @@ export const QueueTrackerSection: React.FC<QueueTrackerSectionProps> = ({
     <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       
       {/* Header */}
-      <div className="text-center max-w-3xl mx-auto mb-10">
-        <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-orange-100 text-[#ea580c] text-xs font-bold mb-2">
-          <Activity className="w-3.5 h-3.5" />
+      <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-orange-100 text-[#ea580c] text-sm font-extrabold mb-3">
+          <Activity className="w-4 h-4" />
           <span>Real-time Work Tracker</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-['Space_Grotesk']">
+        <h2 className="text-4xl sm:text-5xl font-black text-slate-900 font-['Space_Grotesk'] tracking-tight">
           ติดตาม <span className="text-[#f97316]">คิวและสถานะงาน</span>
         </h2>
-        <p className="mt-2 text-slate-600 text-sm sm:text-base">
+        <p className="mt-3 text-slate-600 text-base sm:text-lg font-medium">
           ตรวจสอบความคืบหน้าของอวตารของคุณได้ตลอด 24 ชั่วโมง เพียงกรอกรหัสคำสั่งซื้อ (Order Code) หรือชื่อ Discord
         </p>
 
         {/* Search Bar */}
-        <form onSubmit={handleSearch} className="mt-8 max-w-xl mx-auto flex items-center gap-2">
+        <form onSubmit={handleSearch} className="mt-8 max-w-xl mx-auto flex items-center gap-3">
           <div className="relative flex-1">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
             <input
               type="text"
               placeholder="ค้นหาด้วยรหัสคำสั่งซื้อ เช่น FS-9812 หรือชื่อ Discord..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-white border border-slate-200 focus:border-[#f97316] focus:ring-1 focus:ring-[#f97316] text-slate-900 text-sm placeholder:text-slate-400 outline-none transition-all shadow-sm"
+              className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white border border-slate-200 focus:border-[#f97316] focus:ring-2 focus:ring-orange-100 text-slate-900 text-base placeholder:text-slate-400 outline-none transition-all shadow-sm"
             />
           </div>
           <button
             type="submit"
-            className="px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-[#f97316] hover:bg-[#ea580c] orange-glow transition-all cursor-pointer"
+            className="px-8 py-4 rounded-2xl font-black text-base text-white bg-[#f97316] hover:bg-[#ea580c] orange-glow transition-all cursor-pointer shadow-md"
           >
             ค้นหา
           </button>

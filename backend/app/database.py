@@ -143,32 +143,52 @@ def seed_portfolio(conn):
     items = [
         (
             'port-1', 'Celestia: Nebula Sorceress',
-            'Full Custom Avatar with Cosmic Shaders & Custom Particles',
+            'Full Custom Furry Avatar with Cosmic Shaders & PhysBones',
             'Full Custom',
-            'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
-            'อวตารธีมดวงดาวอวกาศที่สร้างขึ้นใหม่ทั้งหมด ด้วยชุดเกราะเวทมนตร์คอสมิก พร้อมระบบ AudioLink และฟิสิกส์เส้นผมสลวย',
+            '/portfolio/avatar-1.jpg',
+            'อวตารคอสเพลย์เฟอร์รี่ 3D สไตล์อวกาศคอสมิก ขึ้นโครงสร้างโมเดลใหม่ทั้งหมด ติดตั้งระบบฟิสิกส์ PhysBones หู หาง ผม สลวย และ Shaders สไตล์ LilToon เงาสวยงาม',
             '68,500 Triangles', '24 Components (Optimized)', 16, 0, 1, 1, 1,
-            json.dumps(['Original', 'Cosmic', 'AudioLink', 'VRCFT', 'PhysBones']), 1,
+            json.dumps(['Furry', 'Cosmic', 'AudioLink', 'VRCFT', 'PhysBones']), 1,
             datetime.utcnow().isoformat()
         ),
         (
-            'port-2', 'Shinra: Cyber Void Dragon',
+            'port-2', 'Shinra: Cyber Void Guardian',
             'Custom Retexture & Sci-Fi Techwear Cyberware Edit',
             'Retexture & Edit',
-            'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=80',
-            'งานปรับแต่งโมเดล Shinra สไตล์ Cyberpunk อวกาศ เพ้นท์เท็กซ์เจอร์ผิวลายเกล็ดมังกรเรืองแสง พร้อมชุดสูทสตรีทแวร์ไฮเทค',
+            '/portfolio/avatar-2.jpg',
+            'งานปรับแต่งโมเดลสไตล์ไซเบอร์อวกาศ เพ้นท์เท็กซ์เจอร์ผิวลายเกล็ดเรืองแสง พร้อมชุดสูทสตรีทแวร์ไฮเทคและท็อกเกิลเปลี่ยนสไตล์',
             '78,200 Triangles', '18 Components', 22, 0, 0, 1, 1,
             json.dumps(['Shinra', 'Cyberpunk', 'Horns & Tail', 'DPS Ready']), 1,
             datetime.utcnow().isoformat()
         ),
         (
-            'port-3', 'Manuka: Starlight Maiden',
+            'port-3', 'Starlight Furry Companion',
             'Pastel Galaxy Retexture with Custom Outfit Fit & GogoLoco',
             'Retexture & Edit',
-            'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80',
-            'งานรีเท็กซ์เจอร์ Manuka ในโทนสีท้องฟ้าราตรีและดาวประกาย ผสมผสานชุดเดรสผ้าโปร่งแสงที่มีอนุภาคประกายดาวระยิบระยับ',
+            '/portfolio/avatar-3.jpg',
+            'งานรีเท็กซ์เจอร์ในโทนสีท้องฟ้าราตรีและประกายดาว ผสมผสานชุดเดรสผ้าโปร่งแสง และระบบท่าทางนอนหมอบบิน GogoLoco ครบชุด',
             '62,000 Triangles', '16 Components', 14, 1, 1, 0, 1,
-            json.dumps(['Manuka', 'Pastel Galaxy', 'Quest Ready', 'Cute']), 1,
+            json.dumps(['Furry', 'Pastel Galaxy', 'Quest Ready', 'Cute']), 1,
+            datetime.utcnow().isoformat()
+        ),
+        (
+            'port-4', 'Cosmic Valkyrie Accessories Set',
+            '3D Asset Pack: PhysBones Dynamic Ears, Tail & Aura Pack',
+            'Outfits & Props',
+            '/portfolio/avatar-4.jpg',
+            'พร็อพหู หาง และวงแหวนเวทมนตร์หมุนรอบตัว พร้อมระบบฟิสิกส์ PhysBones นุ่มนวล เคลื่อนไหวสมจริงตามแรงโน้มถ่วงในเกม',
+            '24,400 Triangles', '12 Components', 8, 0, 0, 1, 0,
+            json.dumps(['Accessories', 'Props', 'LilToon', 'Ears & Tail']), 0,
+            datetime.utcnow().isoformat()
+        ),
+        (
+            'port-5', 'Shadow Wolf: Quest Optimized Edition',
+            'VRChat Quest & PC Cross-Platform Optimization',
+            'Optimized',
+            '/portfolio/avatar-5.jpg',
+            'การแปลงโมเดลให้รองรับแว่น Meta Quest โดยปรับลด Draw Calls รวมไฟล์ Atlas Texture ให้มี Performance Rank: Good บน Quest',
+            '19,800 Triangles', '6 Components', 6, 1, 0, 0, 1,
+            json.dumps(['Quest Optimized', 'Performance Good', 'Wolf Avatar']), 0,
             datetime.utcnow().isoformat()
         )
     ]
